@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 1,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 233.0, 129.0, 847.0, 684.0 ],
+		"rect" : [ 52.0, 130.0, 847.0, 684.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -98,13 +98,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-4",
-					"linecount" : 4,
+					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 45.0, 578.0, 140.0, 62.0 ],
-					"text" : ";\rmax launchbrowser https://www.npmjs.com/package/total-serialism"
+					"patching_rect" : [ 45.0, 578.0, 210.0, 49.0 ],
+					"text" : ";\rmax launchbrowser http://tmhglnd.github.io/total-serialism"
 				}
 
 			}
@@ -161,7 +161,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 438.0, 285.0, 297.0, 60.0 ],
+					"patching_rect" : [ 438.0, 285.0, 298.0, 60.0 ],
 					"text" : "< generate four cloned version from input list \"0 7 12\", cloned versions have offset 0 7 12 -12. \nArray must be symbol if function has more arguments besides single array."
 				}
 
@@ -225,7 +225,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 1,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -438,7 +438,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 135.0, 480.0, 238.0, 22.0 ],
-					"text" : "-12 -10 -7 -4 -2 1 4 6 9 12"
+					"text" : "7 0 2 4 9 11"
 				}
 
 			}
@@ -485,6 +485,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 1,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 1
 					}
 ,
