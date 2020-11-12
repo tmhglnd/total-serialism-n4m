@@ -9,6 +9,10 @@ const Rand = require('total-serialism').Stochastic;
 const Util = require('total-serialism').Utility;
 const TL = require('total-serialism').Translate;
 
+// These are just a small selection of all the available functions!
+// You can visit the documentation on 
+// http://tmhglnd.github.io/total-serialism
+
 const handlers = {
 	'randomSeed' : (seed) => {
 		// set the random seed for the RNG
@@ -35,6 +39,28 @@ const handlers = {
 		// arguments: length, from, to (inclusive)
 		max.outlet(Gen.spreadInclusive(length, from, to));
 	},
+	'sine' : (length, period, lo, hi) => {
+		// generate periods of a sine wave between lo and hi values
+		max.outlet(Gen.sine(length, period, lo, hi));
+	},
+	'stretch' : (list, length) => {
+		// split first argument symbol into array of numbers
+		list = list.split(" ").map(x => Number(x));
+		
+		// stretch a list to a specified length, interpolating all
+		// values in between first and last numbers
+		max.outlet(Mod.stretch(list, length));
+	},
+	'expand' : (list, length) => {
+		// split first argument symbol into array of numbers
+		list = list.split(" ").map(x => Number(x));
+
+		// expand a list to a specified length, analyzing the 
+		// internal pattern and randomly generating the following
+		// steps based on that analysis.
+		// Part of the Stochastic library because involves randomness
+		max.outlet(Rand.expand(length, list));
+	},
 	'clone' : (list, ...clones) => {
 		// split first argument symbol into array of numbers
 		list = list.split(" ").map(x => Number(x));
@@ -47,6 +73,20 @@ const handlers = {
 	'hexBeat' : (hex) => {
 		// generate a hexadecimal beat
 		max.outlet(Algo.hexBeat(hex));
+	},
+	'plot' : (...list) => {
+		// plot a list to the max console or output as text to max
+		let res = Util.plot(list);
+
+		max.outlet('print', res);
+		max.post(res);
+	},
+	'draw' : (...list) => {
+		// darw an ascii-image of the incoming list and output/print
+		let res = Util.draw(list);
+		
+		max.outlet('print', res);
+		max.post(res);
 	}
 }
 max.addHandlers(handlers);
